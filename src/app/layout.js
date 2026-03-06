@@ -32,7 +32,7 @@ export const metadata = {
   },
   // ADD THIS SECTION:
   verification: {
-  google: 'googlef4fb38ae1a8df871'
+google: 'f4fb38ae1a8df871',
   },
   alternates: {
     canonical: '/',
