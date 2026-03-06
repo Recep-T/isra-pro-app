@@ -3,8 +3,8 @@ export default function sitemap() {
     {
       url: 'https://isra-pro-app.vercel.app',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
-  ];
+  ]
 }
