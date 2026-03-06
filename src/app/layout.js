@@ -32,7 +32,7 @@ export const metadata = {
   },
   // ADD THIS SECTION:
   verification: {
-    google: 'f4fb38ae1a8df871', // Copy only the ID from your filename
+  google: 'googlef4fb38ae1a8df871'
   },
   alternates: {
     canonical: '/',
