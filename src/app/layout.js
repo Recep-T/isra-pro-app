@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://isra-pro-app.vercel.app'),
-  // Bilingual Title is best for high CTR in your main markets
+  
+  // High-Level SEO: Bilingual title for maximum global search reach
   title: {
     default: "Isra Pro: Prayer Times & Qibla | Namaz Vakitleri ve Kıble",
     template: "%s | Isra Pro"
   },
-  // Clean Description for higher Google Authority
+  
   description: "Highly accurate prayer times, Athan alerts, and Qibla finder for the global Muslim community. 100% ad-free and privacy-focused.",
   
-  // ALL Multi-language keywords included here for the bots
   keywords: [
     "prayer times", "qibla finder", "athan", "salat", 
     "namaz vakitleri", "kıble bulucu", "ezan vakti", 
@@ -31,10 +31,15 @@ export const metadata = {
   ],
   
   themeColor: "#2563eb",
+
+  // NATIVE IOS SMART APP BANNER (Added as requested, no "download" script needed)
+  itunes: {
+    appId: '6756538182',
+    appArgument: 'https://isra-pro-app.vercel.app',
+  },
   
   alternates: {
     canonical: '/',
-    // Removed language paths because they don't exist as separate pages
   },
   
   openGraph: {

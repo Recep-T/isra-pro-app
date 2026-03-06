@@ -4,7 +4,6 @@ import { Heart, Compass, Bell, Globe, Apple } from 'lucide-react';
 import { motion } from 'framer-motion';
 import QRCode from "react-qr-code";
 
-// Yeni Componentleri Buradan Import Ediyoruz
 import TestimonialCard from './components/TestimonialCard';
 import DonateModal from './components/DonateModal';
 import PrivacyModal from './components/PrivacyModal';
@@ -31,10 +30,10 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href={IOS_URL} className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl">
+            <a href={IOS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl">
               <Apple size={22} /> App Store
             </a>
-            <a href={ANDROID_URL} className="w-full sm:w-auto bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl">
+            <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-slate-800 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-xl">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-6" /> Google Play
             </a>
             <button onClick={() => setIsDonateOpen(true)} className="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-50 transition-all">
@@ -44,7 +43,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* --- DUAL PHONE QR SECTION (O ÇOK BEĞENDİĞİN KISIM) --- */}
+      {/* --- DUAL PHONE QR SECTION --- */}
       <section className="py-20 px-6 bg-slate-50/30">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-24 relative items-center justify-center w-full max-w-5xl mx-auto">
@@ -52,7 +51,7 @@ export default function Home() {
 
                 {/* IPHONE QR BOX */}
                 <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex justify-center md:justify-end">
-                    <div className="relative bg-white rounded-[3.5rem] p-8 w-[300px] h-[560px] border-[12px] border-slate-900 shadow-[30px_30px_60px_-15px_rgba(0,0,0,0.15)] flex flex-col items-center justify-center">
+                    <div className="relative bg-white rounded-[3.5rem] p-8 w-[300px] h-[560px] border-[12px] border-slate-900 shadow-xl flex flex-col items-center justify-center">
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-slate-900 rounded-b-2xl z-20"></div>
                         <div className="p-5 bg-slate-50 rounded-3xl shadow-inner mb-8 border border-slate-100">
                             <QRCode value={IOS_URL} size={160} fgColor="#000000" />
@@ -64,7 +63,7 @@ export default function Home() {
 
                 {/* ANDROID PHONE QR BOX */}
                 <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex justify-center md:justify-start">
-                    <div className="relative bg-white rounded-[3rem] p-8 w-[300px] h-[560px] border-[12px] border-slate-800 shadow-[30px_30px_60px_-15px_rgba(0,0,0,0.15)] flex flex-col items-center justify-center">
+                    <div className="relative bg-white rounded-[3rem] p-8 w-[300px] h-[560px] border-[12px] border-slate-800 shadow-xl flex flex-col items-center justify-center">
                         <div className="absolute top-5 left-1/2 -translate-x-1/2 w-4 h-4 bg-slate-800 rounded-full z-20"></div>
                         <div className="p-5 bg-slate-50 rounded-3xl shadow-inner mb-8 border border-slate-100">
                             <QRCode value={ANDROID_URL} size={160} fgColor="#0F172A" />
@@ -75,7 +74,6 @@ export default function Home() {
                 </motion.div>
             </div>
 
-            {/* Features */}
             <div className="grid md:grid-cols-3 gap-8 w-full max-w-6xl">
                 <FeatureCard icon={<Compass className="text-blue-600" />} title="Precise Qibla" desc="High-precision sensor for exact Kaaba direction." />
                 <FeatureCard icon={<Bell className="text-indigo-600" />} title="Smart Athan" desc="Personalized notifications for every prayer time." />
@@ -84,7 +82,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- TESTIMONIALS SECTION (MARKET LİNKLİ YENİ HALİ) --- */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-16 tracking-tight italic text-slate-900 uppercase">Global Reviews</h2>
@@ -96,15 +93,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- MODALS & FOOTER --- */}
       <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
       <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
-
-     {/* --- PROFESSIONAL FOOTER --- */}
-    <Footer 
-  onPrivacyClick={() => setIsPrivacyOpen(true)} 
-  onDonateClick={() => setIsDonateOpen(true)} 
-/>
+      <Footer onPrivacyClick={() => setIsPrivacyOpen(true)} onDonateClick={() => setIsDonateOpen(true)} />
     </div>
   );
 }
