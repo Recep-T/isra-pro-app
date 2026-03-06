@@ -13,39 +13,51 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://isra-pro-app.vercel.app'),
-  title: "Isra Pro: Prayer Times, Qibla & Athan | Namaz Vakitleri ve Kıble",
-  description: "Accurate Prayer Times, Qibla & Athan alerts worldwide. | Profesyonel Namaz Vakitleri ve Kıble Bulucu. | Horarios de oración y Qibla. | Намаз убактылары жана Кыбыла. | Gebetszeiten und Qibla. | Время намаза и Кибла.",
+  // Bilingual Title is best for high CTR in your main markets
+  title: {
+    default: "Isra Pro: Prayer Times & Qibla | Namaz Vakitleri ve Kıble",
+    template: "%s | Isra Pro"
+  },
+  // Clean Description for higher Google Authority
+  description: "Highly accurate prayer times, Athan alerts, and Qibla finder for the global Muslim community. 100% ad-free and privacy-focused.",
+  
+  // ALL Multi-language keywords included here for the bots
   keywords: [
     "prayer times", "qibla finder", "athan", "salat", 
     "namaz vakitleri", "kıble bulucu", "ezan vakti", 
-    "horarios de oración", "dirección de la qibla", "adhan", 
+    "horarios de oración", "dirección de la qibla", 
     "намаз убактылары", "кыбыла", "азан", 
-    "gebetszeiten", "gebet", "prayer app", "isra pro"
-  ].join(", "),
+    "gebetszeiten", "gebet", "isra pro"
+  ],
+  
+  themeColor: "#2563eb",
+  
+  alternates: {
+    canonical: '/',
+    // Removed language paths because they don't exist as separate pages
+  },
+  
   openGraph: {
-    title: "Isra Pro: Global Prayer Times",
-    description: "Beautifully designed, highly accurate prayer times for the global Muslim community. No ads, just peace.",
+    title: "Isra Pro: Global Prayer Times & Qibla Finder",
+    description: "No ads, just peace. Experience accurate prayer times with a beautifully designed app.",
     url: 'https://isra-pro-app.vercel.app',
     siteName: 'Isra Pro',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     locale: 'en_US',
     type: 'website',
   },
-  // ADD THIS SECTION:
-  verification: {
-google: 'K9BvBwmV9NPpOmTyiDLsdwjGrx2ccvtiQdHq0UKr4E4',
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Isra Pro: Accurate Prayer Times',
+    description: 'Ad-free, beautifully designed prayer times and Qibla finder.',
+    images: ['/og-image.png'],
   },
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en',
-      'tr-TR': '/tr',
-      'es-ES': '/es',
-      'ky-KG': '/ky',
-      'de-DE': '/de',
-    },
+
+  verification: {
+    google: 'K9BvBwmV9NPpOmTyiDLsdwjGrx2ccvtiQdHq0UKr4E4',
   },
 };
-
 
 export default function RootLayout({ children }) {
   return (
