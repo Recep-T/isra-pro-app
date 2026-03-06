@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative pt-20 pb-16 px-6 text-center bg-gradient-to-b from-blue-50/50 to-white">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 mb-6 leading-tight">
-            Isra Pro <span className="text-blue-600">Prayer </span>
+            Isra Pro <span className="text-blue-600">Prayer Times</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Beautifully designed, highly accurate prayer times for the global Muslim community. No ads, just peace. 
