@@ -12,13 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  // Title: Hem marka hem anahtar kelime dengesi mükemmel.
+  metadataBase: new URL('https://isra-pro-app.vercel.app'),
   title: "Isra Pro: Prayer Times, Qibla & Athan | Namaz Vakitleri ve Kıble",
-  
-  // Description: Google için 5 dilde optimize edilmiş açıklama.
   description: "Accurate Prayer Times, Qibla & Athan alerts worldwide. | Profesyonel Namaz Vakitleri ve Kıble Bulucu. | Horarios de oración y Qibla. | Намаз убактылары жана Кыбыла. | Gebetszeiten und Qibla. | Время намаза и Кибла.",
-  
-  // Keywords: 5 dilde en çok aranan terimler.
   keywords: [
     "prayer times", "qibla finder", "athan", "salat", 
     "namaz vakitleri", "kıble bulucu", "ezan vakti", 
@@ -26,26 +22,20 @@ export const metadata = {
     "намаз убактылары", "кыбыла", "азан", 
     "gebetszeiten", "gebet", "prayer app", "isra pro"
   ].join(", "),
-
-  // Sosyal Medya Paylaşım Ayarları (Open Graph)
   openGraph: {
     title: "Isra Pro: Global Prayer Times",
     description: "Beautifully designed, highly accurate prayer times for the global Muslim community. No ads, just peace.",
-    url: 'https://isra-pro.vercel.app', // Deploy sonrası kendi domaininle değiştir abi
+    url: 'https://isra-pro-app.vercel.app',
     siteName: 'Isra Pro',
     locale: 'en_US',
     type: 'website',
   },
-
-  // Apple & Google için teknik meta tagler
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
+  // ADD THIS SECTION:
+  verification: {
+    google: 'f4fb38ae1a8df871', // Copy only the ID from your filename
   },
-  
-  // Alternatif diller sinyali
   alternates: {
+    canonical: '/',
     languages: {
       'en-US': '/en',
       'tr-TR': '/tr',
@@ -56,12 +46,11 @@ export const metadata = {
   },
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
         {children}
       </body>
     </html>
